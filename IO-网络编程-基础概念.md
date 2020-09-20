@@ -6,12 +6,12 @@
 ## 一、java.io 
 
 ### 1、总览
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/java-io.jpg)
+![avator](images-folder/java-io.jpg)
 
 ### 2、java.io里面的字符流
 #### 1>、基本的字符流：在创建CharArrayReader或者StringReader的时候，需要在构造器中传入具体的数据源。writer一样
     从构造器中传入的数据源中读取数据，或者往这个数据源中写入数据
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/zifuliu.jpg)
+![avator](images-folder/zifuliu.jpg)
 
     
 #### 2>、相对更高级的字符流：BufferedReader、FilterReader、InputStreamReader等这些reader在创建他们的时候，都需要再额外的传入一些Reader才可以
@@ -20,13 +20,13 @@
 * BufferedReader：给Reader增加一个缓冲区，这样就可以一次性从数据源中多读取一些数据，先放到缓冲区中，然后应用进程可以频繁的从缓冲区进行读写
 * FilterReader：(是一个抽象类，有很多扩展的子类)可以对Reader读进来的字符流做一些额外的操作，比如可以跳过字符流中一些特定的字符而不去处理它，或者对某个字符标记，重复读取
 * InputStreamReader：它是把字节流转换成一个字符流的类， 常用子类为FileReader(将以字节存储的文件转换为字符流读入)
-    
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/zifuliu2.jpg)
+ 
+![avator](images-folder/zifuliu2.jpg)   
 
 
 ### 3、java.io里面的字节流
 #### 1>、基本的字节流：ByteArrayInputStream、FileInputStream
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/zijieliu.jpg)
+![avator](images-folder/zijieliu.jpg)
 
 
 #### 2>、高级的字节流：(FilterInputStream) BufferedInputStream、DataInputStream 需要在创建的时候添加一个字节流对象，
@@ -34,7 +34,7 @@
 * BufferedInputStream：增加缓冲区，效率更高  
 * DataInputStream：和DataOutputStream结合使用，可以对基本数据类型进行读写操作(将字节流读或者写成基本数据类型)
 
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/zijieliu2.jpg)
+![avator](images-folder/zijieliu2.jpg)
 
 
 ### 4、java.io里面的装饰者模式
@@ -47,7 +47,7 @@
 ## 二、Socket也是一种资源
 ### 1、Socket是网络通信的端点
     
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/socket1.jpg)    
+![avator](images-folder/socket1.jpg)
     
     Socket是服务器进程这一端如果他要和其他服务器或者和其他的网络进程进行任何网络通信的端点
 
@@ -58,7 +58,7 @@
 
 ### 3、通过socket发送数据
 
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/socket2.jpg)
+![avator](images-folder/socket2.jpg)
 
 #### （1）、创建Socket
     首先应用进程会创建一个Socket(这个socket就是抽象层面的一个网络通信的端点)
@@ -73,7 +73,7 @@
 
 ### 4、通过socket接收数据
 
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/socket3.jpg)
+![avator](images-folder/socket3.jpg)
 
 #### （1）、创建Socket
     首先应用进程会创建一个Socket(这个socket就是抽象层面的一个网络通信的端点)
@@ -96,14 +96,14 @@
 * 场景：男孩向女孩表白
 
 #### （1）、同步通信机制
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/tongbutongxinjizhi.jpg)
+![avator](images-folder/tongbutongxinjizhi.jpg)
 
     女孩陷入沉思，好好的考虑是否要接受男孩的表白，此时男孩只能坐在女孩对面默默的等待，直到女孩想好了
 * 此时就类似我们的同步通信机制，发出表白的男孩子就好比发出请求的一方，或者是发出调用的一方，
     收到请求的一方(女孩子这边)，她要花上一定时间直到它处理结束
 
 #### （2）、异步通信机制 
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/yibutongxinjizhi.jpg)
+![avator](images-folder/yibutongxinjizhi.jpg)
 
 ##### 当我们不需要等待调用或请求的返回结果，就已经可以直接返回或者调用完成
     女孩子可能会让男孩子给她几天时间让她考虑一下，等她考虑好了，再给男孩子发个消息，
@@ -111,14 +111,14 @@
     但是男孩子(请求方或者调用方)还不知道这次调用或者请求的结果，必须等待女孩子给他发消息以后，他才能知道结果
 
 #### （3）、阻塞式调用
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/zuseshidiaoyong.jpg)
+![avator](images-folder/zuseshidiaoyong.jpg)
     当男孩子和女孩子表白之后，不管女孩子什么反应(陷入沉思、给女孩子几天时间想想), 
     如果此时男孩子什么事情都干不了了，茶不思饭不想，
 * 这种情况就类似于我们的阻塞式调用，发出请求的这一方等待调用或请求的结果收到之前，什么任务都不能处理了，
     只能专心的等待调用的结果    
     
 #### （4）、非阻塞式调用
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/feizuseshidiaoyong.jpg)
+![avator](images-folder/feizuseshidiaoyong.jpg)
     当男孩子和女孩子表白之后，不管女孩子什么反应(陷入沉思、给女孩子几天时间想想),
     此时男孩子心思比较活跃，还可以玩游戏、打打球
 * 这种请求就类似于我们的非阻塞式调用，请求方发出请求之后，照常可以处理其他任务，
@@ -127,23 +127,23 @@
 ### 2、四个调用和通信结果不同场景
 
 #### （1）、同步阻塞
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/tongbuzuse.jpg)
+![avator](images-folder/tongbuzuse.jpg)
 * 男孩向女孩表白，女孩陷入沉思，男孩此时茶不思饭不想就等着女孩答复
 
 #### （2）、同步非阻塞
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/feitongbuzuse.jpg)
+![avator](images-folder/feitongbuzuse.jpg)
 * 男孩向女孩表白，女孩陷入沉思，男孩此时一会想着刚才玩的游戏，一会想着什么时候去打篮球
 
 #### （3）、异步阻塞
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/yibuzuse.jpg)
+![avator](images-folder/yibuzuse.jpg)
 * 男孩向女孩表白，女孩让男孩回去等她消息吧，男孩此时茶不思饭不想就等着女孩答复
 
 #### （4）、异步非阻塞
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/yibufeizuse.jpg)
+![avator](images-folder/yibufeizuse.jpg)
 * 男孩向女孩表白，女孩让男孩回去等她消息吧，男孩此时一会想着刚才玩的游戏，一会想着什么时候去打篮球
 
 ### 3、排列组合
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/pailiezuhe.jpg)
+![avator](images-folder/pailiezuhe.jpg)
 
 
 
@@ -154,7 +154,7 @@
 * 复用线程
 
 ### 1、Java提供的线程池  -- ExecutorService
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/javatigongdexianchengchi.jpg)
+![avator](images-folder/javatigongdexianchengchi.jpg)
 
 ### 2、java提供的创建线程池的的方法 Executors
 
@@ -169,12 +169,12 @@
 * ServerSocket一般代表服务端的socket
 * Socket一般代表客户端的socket
 
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/Socketheserversocket1.jpg)
+![avator](images-folder/Socketheserversocket1.jpg)
 
 ## 六、BIO编程模型(Blocked IO)  -- 阻塞式IO
 
 ### 1、传统的BIO编程模型
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/BIObianchengmoxing.jpg)
+![avator](images-folder/BIObianchengmoxing.jpg)
 
 ### 2、多人聊天室
 * 基于BIO模型（同步阻塞IO模型）
@@ -183,7 +183,7 @@
 
 
 ### 3、伪异步IO编程模型
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/weiyibuIObianchengmoxing.jpg)
+![avator](images-folder/weiyibuIObianchengmoxing.jpg)
 
 ### 4、BIO中的阻塞
 
@@ -220,7 +220,7 @@
 
 #### （1）、向Buffer写入数据
 
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/xiangbufferxierushuju.jpg)
+![avator](images-folder/xiangbufferxierushuju.jpg)
 
     position 目前操作所在的位置
     capacity 整个Buffer缓冲区最大的容量，指向最多可以写到的位置
@@ -232,7 +232,7 @@
     此时limit指针指向所能读到的最远的位置 
 
 #### （3）、从Buffer读取数据
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/congbufferduqushuju.jpg)
+![avator](images-folder/congbufferduqushuju.jpg)
 
 #### （4）、clear()方法 
 * 不包含未读取数据   
@@ -244,7 +244,7 @@
     
 ##### 虽然这个方法叫做clear，但是并没有将之前写入的数据进行任何实质性的清除，但是在写模式的情况下写入的起始位置发生了变化，所以起到了和请求一样的目的，同时效率更高
     
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/bufferdeclearfangfa.jpg)
+![avator](images-folder/bufferdeclearfangfa.jpg)
 
 #### （4）、compact()方法  
 * 包含未读取数据 
@@ -255,16 +255,16 @@
     position指针移动到未读数据处
     limit指针从原本指向所能读到的最远的位置更改为与capacity一样，指向缓冲区的最大位置  
     
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/bufferdecompactfangfa.jpg)
+![avator](images-folder/bufferdecompactfangfa.jpg)
 
 
 ### 5、Channel基本操作
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/channeljibencaoz.jpg)
+![avator](images-folder/channeljibencaoz.jpg)
 
     Channel之间可以进行数据的传输，而不依赖Buffer
     
 ### 6、几个重要的Channel
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/jigezhongyaodechannel.jpg)
+![avator](images-folder/jigezhongyaodechannel.jpg)
 
 
 * 1、通过Channel(通道)来进行本地文件的拷贝
@@ -281,7 +281,7 @@
 #### （1）、Channel的状态变化
 * 每一个Channel的对象在某一个特定的时间，它都处于或者一个不可操作(没什么操作可以进行的状态)，
 或者是一个可操作状态
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/Channeldezhuangtaibianhua.jpg)
+![avator](images-folder/Channeldezhuangtaibianhua.jpg)
 
 
 
@@ -297,18 +297,18 @@
 * 6、selector()返回的是在哪个Selector对象上进行注册的
 * 7、attachment()对于每一个注册再Selector上的Channel对象，可以在给它加上一个对象(Object，这个对象可以是任何有意义的，对Channel有帮助的对象)
 
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/zaiSelectorsahngzhuceChannel.jpg)
+![avator](images-folder/zaiSelectorsahngzhuceChannel.jpg)
     
         
 #### （3）、使用Selector选择Channel
 * 如果当前Selector上没有处于可操作的Channel， select() == 0
 * 当处理完可操的Channel对象以后，要手动将其状态修改为不可操作状态
 
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/shiyongSelectorxuanzeChannel.jpg)
+![avator](images-folder/shiyongSelectorxuanzeChannel.jpg)
 
 
 ## 八、NIO编程模型
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/NIObianchengmoxing.jpg)
+![avator](images-folder/NIObianchengmoxing.jpg)
 
 ## 九、AIO异步通信模型
 
@@ -322,25 +322,25 @@
 
 
 #### （1）、阻塞式I/O - BIO
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/zuseshiIOBIO.jpg)
+![avator](images-folder/zuseshiIOBIO.jpg)
 
     应用程序一直等待内核返回数据I/O（从网络中收到的数据）
 
 #### （2）、非阻塞式I/O - NIO (这里不包含Selector)
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/feizuseshiIONIO.jpg)
+![avator](images-folder/feizuseshiIONIO.jpg)
 
     应用程序持续请求内核，如果此时有数据就返回，没有数据就继续下一次请求
     此时如果想要实时得到内核中的数据，需要通过轮询的方式来请求内核，查看是否有数据
     
 #### （3）、I/O多路复用 - NIO + Selector
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/IOduolufuyong.jpg)
+![avator](images-folder/IOduolufuyong.jpg)
     
     应用程序要求内核去监听要请求的数据I/O通道的状态变化，如果监听I/O通道的状态发生了变化，就给应用程序返回可读条件，应用程序再进行系统调用去内核拷贝数据到应用程序缓冲区
     此时的select方法是阻塞是调用
     
     
 #### （4）、异步I/O - AIO  （Asynchronous IO）
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/yibuIOAIO.jpg)
+![avator](images-folder/yibuIOAIO.jpg)
 
     1、应用程序发起系统调用，询问内核有没有新的数据准备好可以让应用程序进行接下来的处理
     2、如果没有，系统调用直接返回，此时应用程序并不会阻塞在这里
@@ -360,20 +360,20 @@
 ##### ②、read
 ##### ③、write
 
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/AIOzhongdeyibucaoz.jpg)
+![avator](images-folder/AIOzhongdeyibucaoz.jpg)
 
 #### （2）、异步调用操作的实现
 
 ##### ① 、通过返回Future
     Future就是对未来会完成的一个任务的抽象
     
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/tongguoFuture.jpg)
+![avator](images-folder/tongguoFuture.jpg)
 
 
 ##### ②、通过使用CompletionHandler
     通过回调的方式实现异步
     
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/tongguoCompletionHandler.jpg)
+![avator](images-folder/tongguoCompletionHandler.jpg)
 
 
 ### 3、异步调用实例
@@ -386,7 +386,7 @@
 这个通道组或者是通道群指的是一组可以被多个异步通道所共享的资源群组（资源主要包含线程池）,
 在AIO编程模型中，操作系统帮我们做了很多事情，当操作系统帮我们准备好了各种数据之后，它会异步的来通知我们数据已经准备好了或者是通过我们之前设置的一些Handler做一个异步的操作
 操作系统是怎么样来Dispatc各种各样Handler来操作的？实际上实现是操作系统会用到很多资源，比如线程池，操作系统来通过循环使用这个线程池来处理Handler
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/AIObianchengmoxing.jpg)
+![avator](images-folder/AIObianchengmoxing.jpg)
 
 
 ## 十、简易版Web服务器 
@@ -394,7 +394,7 @@
 ### 1、向服务器请求资源
 
 ### 2、Tomcat结构
-![Image](https://github.com/2571138262/Java-network-programming-BIO-NIO-AIO/blob/master/images-folder/Tomcatjiegou.jpg)
+![avator](images-folder/Tomcatjiegou.jpg)
 
 #### （1）Server组件：是整个Tomcat最外层的结构，它是真正运行起来我们的Tomcat服务器的实例
 * Tomcat服务器的最顶层组件
